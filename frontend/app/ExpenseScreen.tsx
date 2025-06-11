@@ -131,13 +131,13 @@ export default function ExpenseScreen() {
         {loading ? (
           <ActivityIndicator size="large" style={{ marginTop: 50 }} />
         ) : filtered.length === 0 ? (
-          <Text style={styles.empty}>Aucune dépense trouvée.</Text>
+          <Text style={styles.empty}>No History Found.</Text>
         ) : (
           <>
             <View style={styles.tableHeader}>
               <Text style={styles.headerCell}>Description</Text>
-              <Text style={styles.headerCell}>Montant</Text>
-              <Text style={styles.headerCell}>Catégorie</Text>
+              <Text style={styles.headerCell}>Value</Text>
+              <Text style={styles.headerCell}>Categories</Text>
               <Text style={styles.headerCell}>Date</Text>
             </View>
 

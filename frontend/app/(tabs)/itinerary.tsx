@@ -315,7 +315,7 @@ export default function ItineraryPage() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {/* Header */}
             <ImageBackground
         source={{
@@ -477,7 +477,7 @@ export default function ItineraryPage() {
           </View>
         </View>
       </Modal>
-    </View>
+    </ScrollView>
   );
 }
 

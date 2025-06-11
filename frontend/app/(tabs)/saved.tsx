@@ -127,7 +127,6 @@ export default function SavedPage() {
     // });
 
 
-    // Abdellah Qodsi
     const categories = [
         { name: 'All', icon: 'grid' },
         { name: 'Landmarks', icon: 'map-pin' },
@@ -161,12 +160,11 @@ export default function SavedPage() {
             const response = await fetch(`http://localhost:8082/api/savedDestinations/user/${user.id}`);
             const savedList = await response.json();
 
-            // Enrichir avec les données de destinations.json
             const enriched = savedList.map((saved: any) => {
                 const full = destinations.find((d) => d.id === saved.destinationId);
                 return {
                     ...saved,
-                    ...full, // fusionne name, description, image, etc.
+                    ...full, //  name, description, image, etc.
                 };
             });
             setSaved(enriched);
@@ -201,7 +199,6 @@ export default function SavedPage() {
         return matchesCategory && matchesSearch && matchesBudget && matchesRating && matchesTags;
     });
 
-    // End Abdellah Qodsi
 
     const renderItem = ({ item }: { item: SavedItem }) => (
         <View style={styles.card}>
@@ -302,7 +299,7 @@ export default function SavedPage() {
             {/* Saved Items */}
             <ScrollView contentContainerStyle={styles.container12}>
                 {filteredItems.length === 0 ? (
-                    <Text style={styles.emptyText}>Aucune destination dans cette catégorie.</Text>
+                    <Text style={styles.emptyText}>No destinations in this category.</Text>
                 ) : (
                     filteredItems.map((item) => (
                         <TouchableOpacity key={item.id} style={styles.card}
@@ -311,7 +308,7 @@ export default function SavedPage() {
                                 <Image source={{ uri: item.images }} style={styles.image} />
                             ) : (
                                 <View style={[styles.image, styles.imagePlaceholder]}>
-                                    <Text style={{ color: '#999' }}>Aucune image</Text>
+                                    <Text style={{ color: '#999' }}>Image</Text>
                                 </View>
                             )}
                             <Text style={styles.name}>{item.name}</Text>

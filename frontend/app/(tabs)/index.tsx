@@ -207,10 +207,6 @@ export default function MainPage() {
         scrollViewRef.current.scrollTo({ x: 0, animated: false });
       }
 
-      // You would typically fetch fresh data here
-      // For example: const newLocations = await fetchLocations();
-      // setLocations(newLocations);
-
       setRefreshing(false);
     } catch (error) {
       console.error("Refresh failed:", error);
@@ -472,7 +468,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 10,
     maxHeight: 325,
-    // zIndex: 1000,
+    zIndex: 1000,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
